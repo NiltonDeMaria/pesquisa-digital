@@ -1,6 +1,16 @@
 import csv
 from datetime import datetime
 
+def pergunta(numero, texto):
+    visual = int(input(f'''
+        Pergunta {numero}:
+            {texto}
+            1 - Sim
+            2 - Não
+            3 - Não sei responder
+                          '''))
+    return visual
+
 codigo = input('Digite o código de identificação da pesquisa: ')
 
 with open(f'respostas{codigo}.csv', 'w', newline='') as csvfile:
@@ -19,34 +29,15 @@ with open(f'respostas{codigo}.csv', 'w', newline='') as csvfile:
                     break
 
                 genero = input("Digite o gênero do usuário: ")
-                resposta1 = int(input('''
-                        Pergunta 1:
-                            Nos últimos 3 meses você comprou chocolate nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta2 = int(input('''
-                        Pergunta 2:
-                            Nos últimos 3 meses você comprou bebida nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta3 = int(input('''
-                        Pergunta 3:
-                            Nos últimos 3 meses você comprou item de papelaria nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta4 = int(input('''
-                        Pergunta 4:
-                            Nos últimos 3 meses você comprou livro nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
+
+                resposta1 = pergunta(1, "Nos últimos 3 meses você comprou chocolate nas Lojas Americanas?")
+                
+                resposta2 = pergunta(2, "Nos últimos 3 meses você comprou bebida nas Lojas Americanas?")
+                
+                resposta3 = pergunta(3, "os últimos 3 meses você comprou item de papelaria nas Lojas Americanas?")
+                
+                resposta4 = pergunta(4 , "Nos últimos 3 meses você comprou livro nas Lojas Americanas?")
+                
                 data_hora = datetime.now().strftime('%d/%m/%Y %H:%M')
                 
 
