@@ -1,15 +1,6 @@
 import csv
 from datetime import datetime
-
-def pergunta(numero, texto):
-    visual = int(input(f'''
-        Pergunta {numero}:
-            {texto}
-            1 - Sim
-            2 - Não
-            3 - Não sei responder
-                          '''))
-    return visual
+import perguntas as p
 
 codigo = input('Digite o código de identificação da pesquisa: ')
 
@@ -30,14 +21,14 @@ with open(f'respostas{codigo}.csv', 'w', newline='') as csvfile:
 
                 genero = input("Digite o gênero do usuário: ")
 
-                resposta1 = pergunta(1, "Nos últimos 3 meses você comprou chocolate nas Lojas Americanas?")
+                resposta1 = p.Pergunta(1, "Nos últimos 3 meses você comprou chocolate nas Lojas Americanas?").pergunta()
                 
-                resposta2 = pergunta(2, "Nos últimos 3 meses você comprou bebida nas Lojas Americanas?")
+                resposta2 = p.Pergunta(2, "Nos últimos 3 meses você comprou bebida nas Lojas Americanas?").pergunta()
                 
-                resposta3 = pergunta(3, "os últimos 3 meses você comprou item de papelaria nas Lojas Americanas?")
+                resposta3 = p.Pergunta(3, "Nos últimos 3 meses você comprou item de papelaria nas Lojas Americanas?").pergunta()
                 
-                resposta4 = pergunta(4 , "Nos últimos 3 meses você comprou livro nas Lojas Americanas?")
-                
+                resposta4 = p.Pergunta(4 , "Nos últimos 3 meses você comprou livro nas Lojas Americanas?").pergunta()
+
                 data_hora = datetime.now().strftime('%d/%m/%Y %H:%M')
                 
 
