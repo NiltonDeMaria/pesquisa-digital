@@ -1,5 +1,3 @@
-from datetime import datetime
-
 class Pergunta:
     def __init__(self, numero, texto):
         self.numero = numero
