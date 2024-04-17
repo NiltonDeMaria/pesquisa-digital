@@ -12,11 +12,23 @@ perguntas = [
     Pergunta(6, "Você sabe como funcionam os diferentes tipos de seguros de vida, como seguro de vida inteira e seguro de vida temporário?")
 ]
 
-codigo_pesquisa = input('Digite o código de identificação da pesquisa: ')  # Solicita ao usuário o código de identificação da pesquisa
 
-# Cria uma instância da classe Pesquisa com o código fornecido e a lista de perguntas
-pesquisa = Pesquisa(codigo_pesquisa, perguntas)
 
-# Realiza a pesquisa e salva as respostas
-pesquisa.realizarPesquisa()
-pesquisa.salvarPesquisas()
+def obterCodigoPesquisa():
+    while True:
+        codigoPesquisa = input('Digite o código de identificação da pesquisa: ')
+        if codigoPesquisa.isdigit(): # Aceita apenas valores numericos 
+            return codigoPesquisa
+        else:
+            print("Por favor, digite um código de pesquisa válido.")
+
+def main():
+    codigo_pesquisa = obterCodigoPesquisa ()
+    # Cria uma instância da classe Pesquisa com o código fornecido e a lista de perguntas
+    pesquisa = Pesquisa(codigo_pesquisa, perguntas)
+    # Realiza a pesquisa e salva as respostas
+    pesquisa.realizarPesquisa()
+    pesquisa.salvarPesquisas()
+    
+if __name__ == "__main__":
+    main()
