@@ -3,18 +3,6 @@ PROJETO EM GRUPO - Módulo 1 – Quero os dados na minha mesa!
 
 Este projeto visa desenvolver uma aplicação capaz de realizar uma pesquisa digital com a população de diversas cidades do Brasil, armazenando os dados coletados em um arquivo CSV para análises futuras. A pesquisa será conduzida por funcionários da empresa, que sairão a campo para coletar as respostas.
 
-## Squad
-
-Igor Costa
-
-Leonardo Xavier
-
-Matheus Lisboa
-
-Nilton Cesar
-
-Raphaela Vargas
-
 ## Contexto
 
 O projeto foi desenvolvido para atender à necessidade de armazenar os dados da pesquisa em um formato acessível para análises posteriores. O grupo definiu as perguntas da pesquisa e os critérios de resposta.
@@ -41,3 +29,15 @@ O projeto deve ser funcional e passível de testes durante a apresentação.
 Este projeto atende a todas as especificações solicitadas, proporcionando uma solução eficiente para a coleta e armazenamento de dados de pesquisa. As escolhas de implementação foram feitas visando a simplicidade, eficiência e modularidade do código. O código-fonte e a documentação estão disponíveis neste repositório do GitHub.
 
 Esse README oferece uma visão geral do projeto, destacando suas principais funcionalidades e como ele atende aos requisitos estabelecidos.
+
+## Squad
+
+Igor Costa
+
+Leonardo Xavier
+
+Matheus Lisboa
+
+Nilton Cesar
+
+Raphaela Vargas
