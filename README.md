@@ -6,9 +6,13 @@ Este projeto visa desenvolver uma aplicação capaz de realizar uma pesquisa dig
 ## Squad
 
 Igor Costa
+
 Leonardo Xavier
+
 Matheus Lisboa
+
 Nilton Cesar
+
 Raphaela Vargas
 
 ## Contexto
