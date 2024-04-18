@@ -1,55 +1,25 @@
-import csv
-from datetime import datetime
+from perguntas import Pergunta, Pesquisa  
 
-codigo = input('Digite o código de identificação da pesquisa: ')
+# Cria uma instância da classe Pesquisa utilizando como argumento a lista de perguntas. 
+def main():
 
-with open(f'respostas{codigo}.csv', 'w', newline='') as csvfile:
-            campos_head = ['idade', 'genero', 'resposta_1', 'resposta_2', 'resposta_3', 'resposta_4', 'data e hora']
-            writer = csv.DictWriter(csvfile, fieldnames=campos_head)
+    # Definindo a lista de perguntas e utilizando a Classe Pergunta().
+    # Criando instâncias da classe Pergunta com número e texto
+    perguntas = [
+        Pergunta(1, "Você sabe o que é um seguro de vida?"), 
+        Pergunta(2, "Você possui atualmente um seguro de vida?"),
+        Pergunta(3, "Você acredita que um seguro de vida é importante para proteger sua família financeiramente em caso de sua morte?"),
+        Pergunta(4, "Você confia na seguradora para cumprir suas obrigações em caso necessário?"),
+        Pergunta(5, "Você já teve alguma experiência pessoal ou familiar em que um seguro de vida foi acionado?"),
+        Pergunta(6, "Você considera o custo do seguro de vida um fator importante ao decidir se deve ou não adquiri-lo?")
+    ]
+    pesquisa = Pesquisa(perguntas)
+    pesquisa.verificaCodigo('Digite o código de identificação da pesquisa: ')  # Solicita e verifica o código fornecido.
 
-            writer.writeheader()
-            
-            idade = 3
-
-            while idade != 00:
-                     
-                idade = int(input("Digite a idade do usuário: "))
-                
-                if idade == 00:
-                    break
-
-                genero = input("Digite o gênero do usuário: ")
-                resposta1 = int(input('''
-                        Pergunta 1:
-                            Nos últimos 3 meses você comprou chocolate nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta2 = int(input('''
-                        Pergunta 2:
-                            Nos últimos 3 meses você comprou bebida nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta3 = int(input('''
-                        Pergunta 3:
-                            Nos últimos 3 meses você comprou item de papelaria nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                resposta4 = int(input('''
-                        Pergunta 4:
-                            Nos últimos 3 meses você comprou livro nas Lojas Americanas?
-                            1 - Sim
-                            2 - Não
-                            3 - Não sei responder
-                                            '''))
-                data_hora = datetime.now().strftime('%d/%m/%Y %H:%M')
-                
-
-                writer.writerow({'idade': idade, 'genero': genero, 'resposta_1':resposta1, 'resposta_2':resposta2, 'resposta_3': resposta3, 'resposta_4':resposta4, 'data e hora': data_hora})
-
-        
+    # Realiza a pesquisa e salva as respostas
+    pesquisa.realizarPesquisa('Digite a idade do usuário: ', 'Digite o gênero do usuário (F/f para feminino, M/m para masculino ou O/o para outros): ')
+    pesquisa.salvarPesquisas()
+    
+    
+if __name__ == "__main__":
+    main()
